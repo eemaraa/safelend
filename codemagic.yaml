@@ -11,7 +11,7 @@ workflows:
           flutter packages pub get
       - name: Flutter build ipa
         script: |
-          flutter build ipa --release
+          flutter build ipa --release --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
