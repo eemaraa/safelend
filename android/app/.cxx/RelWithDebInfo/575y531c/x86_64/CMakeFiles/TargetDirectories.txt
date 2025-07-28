@@ -1,0 +1,2 @@
+C:/Users/MeLaN/Documents/safeland/safelend/android/app/.cxx/RelWithDebInfo/575y531c/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/MeLaN/Documents/safeland/safelend/android/app/.cxx/RelWithDebInfo/575y531c/x86_64/CMakeFiles/rebuild_cache.dir
