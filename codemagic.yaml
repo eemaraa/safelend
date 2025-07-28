@@ -5,13 +5,21 @@ workflows:
       xcode: latest
       cocoapods: default
       flutter: stable
+      vars:
+        XCODE_WORKSPACE: "ios/Runner.xcworkspace"
+        XCODE_SCHEME: "Runner"
+        PACKAGE_NAME: "com.safelend.app"
     scripts:
+      - name: Set up iOS build environment
+        script: |
+          export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
+          export PATH="$DEVELOPER_DIR/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
       - name: Get Flutter packages
         script: |
           flutter packages pub get
       - name: Flutter build ipa
         script: |
-          flutter build ipa --release --no-codesign
+          flutter build ipa --release --no-codesign --dart-define=FLUTTER_TARGET_PLATFORM=ios
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
